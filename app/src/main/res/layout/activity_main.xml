@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_marginStart="10dp"
+	android:layout_marginTop="10dp"
+	android:layout_marginEnd="10dp"
+	android:layout_marginBottom="10dp"
+	tools:context=".MainActivity">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/constraintCreateAlias"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<TextView
+			android:id="@+id/tvCreateAlias"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Create alias:"
+			app:layout_constraintBottom_toBottomOf="@+id/etAliasName"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/etAliasName" />
+
+		<EditText
+			android:id="@+id/etAliasName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:inputType="textPersonName"
+			android:textSize="14sp"
+			app:layout_constraintBottom_toBottomOf="@+id/btnCreate"
+			app:layout_constraintEnd_toStartOf="@+id/btnCreate"
+			app:layout_constraintStart_toEndOf="@+id/tvCreateAlias"
+			app:layout_constraintTop_toTopOf="@+id/btnCreate" />
+
+		<Button
+			android:id="@+id/btnCreate"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Create"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/constraintDeleteAlias"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toBottomOf="@+id/constraintCreateAlias">
+
+		<TextView
+			android:id="@+id/tvCreateCipher"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Delete alias:"
+			app:layout_constraintBottom_toBottomOf="@+id/spinnerDeleteAlias"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/spinnerDeleteAlias" />
+
+		<Spinner
+			android:id="@+id/spinnerDeleteAlias"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="30dp"
+			app:layout_constraintBottom_toBottomOf="@+id/btnDeleteAlias"
+			app:layout_constraintStart_toEndOf="@+id/tvCreateCipher"
+			app:layout_constraintTop_toTopOf="@+id/btnDeleteAlias" />
+
+		<Button
+			android:id="@+id/btnDeleteAlias"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Delete"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/constraintCipherText"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/constraintDeleteAlias">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/constraintSelectToCipher"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:foregroundGravity="center_horizontal"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="@+id/etPlainText"
+			app:layout_constraintTop_toBottomOf="@+id/etPlainText">
+
+			<TextView
+				android:id="@+id/tvAliasCipherSelect"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Cipher with alias:"
+				app:layout_constraintBottom_toBottomOf="@+id/spinnerCipherAliases"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="@+id/spinnerCipherAliases" />
+
+			<Spinner
+				android:id="@+id/spinnerCipherAliases"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				app:layout_constraintStart_toEndOf="@+id/tvAliasCipherSelect"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<Button
+				android:id="@+id/btnCipher"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Cipher text"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/spinnerCipherAliases" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<TextView
+			android:id="@+id/tvTextToCipherLabel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Text to be ciphered:"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<EditText
+			android:id="@+id/etPlainText"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:inputType="text"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/tvTextToCipherLabel" />
+
+		<TextView
+			android:id="@+id/tvCipheredText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:text="Ciphered text:"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/constraintSelectToCipher" />
+
+		<EditText
+			android:id="@+id/etCipheredText"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:background="@android:color/darker_gray"
+			android:editable="false"
+			android:ems="10"
+			android:focusable="false"
+			android:inputType="textMultiLine|textPersonName"
+			android:maxLines="3"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/tvCipheredText" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/constraintDecipherText"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/constraintCipherText">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/constraintSelectToDecipher"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:foregroundGravity="center_horizontal"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<TextView
+				android:id="@+id/tvAliasDecipherSelect"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Decipher with alias:"
+				app:layout_constraintBottom_toBottomOf="@+id/spinnerDecipherAliases"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="@+id/spinnerDecipherAliases" />
+
+			<Spinner
+				android:id="@+id/spinnerDecipherAliases"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				app:layout_constraintStart_toEndOf="@+id/tvAliasDecipherSelect"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<Button
+				android:id="@+id/btnDecipher"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Decipher text"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/spinnerDecipherAliases" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<TextView
+			android:id="@+id/tvDecipherText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:text="Deciphered text:"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/constraintSelectToDecipher" />
+
+		<EditText
+			android:id="@+id/etDecipheredText"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:background="@android:color/darker_gray"
+			android:editable="false"
+			android:ems="10"
+			android:focusable="false"
+			android:inputType="textPersonName"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/tvDecipherText" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

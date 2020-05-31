@@ -1,2 +1,2 @@
 *.java linguist-detectable=true
-*.kotlin linguist-detectable=false
+*.kt linguist-detectable=false

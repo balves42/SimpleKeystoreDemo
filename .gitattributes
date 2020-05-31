@@ -1,1 +1,2 @@
-*.rb linguist-language=Java
+*.java linguist-detectable=true
+*.kotlin linguist-detectable=false
